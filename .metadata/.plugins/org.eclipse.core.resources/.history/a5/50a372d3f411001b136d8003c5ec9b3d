@@ -1,0 +1,11 @@
+package sampleCC;
+
+import java.util.Scanner;
+
+public class Main2 {
+	Scanner input=new Scanner(System.in);
+	System.out.println("Enter the qty to be purchase: ");
+	
+	//String[] array=
+
+}

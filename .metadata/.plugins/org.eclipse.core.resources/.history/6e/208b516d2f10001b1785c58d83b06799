@@ -1,0 +1,37 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
+
+public class Main {
+
+public static void main(String [] args) {
+	long amt=0;
+	Scanner sc=new Scanner(System.in);
+    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"); 
+    LocalDateTime current=LocalDateTime.parse("29/10/2019 20:10",format);
+        //Fill the Code
+    System.out.println("In-time");
+    String in=sc.nextLine();
+    LocalDateTime inTime=LocalDateTime.parse(in,format);
+    long d1=ChronoUnit.MINUTES.between(inTime, current);
+    if (d1>=1) {
+    	System.out.println("Out-time");
+        String out=sc.nextLine();
+        LocalDateTime outTime=LocalDateTime.parse(out,format);
+        long d2=ChronoUnit.MINUTES.between(outTime, current);
+        if (d2>=1) {
+        	long d3=ChronoUnit.MINUTES.between(outTime, inTime);
+        	if (d3%60==0) {
+				amt=(d3/60)*10;
+				System.out.println(amt+" Rupees");
+			}else {
+				amt=(1+(d3/60))*10;
+				System.out.println(amt+" Rupees");
+			}
+		}else
+			System.out.println(out+" is an Invalid Out-Time");
+    }else
+    	System.out.println(in+" is an Invalid In-Time ");
+}
+}

@@ -1,0 +1,45 @@
+package multithreading;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+//getting input
+		System.out.println("Enter the number of employees");
+		int no=Integer.parseInt(sc.nextLine());
+		System.out.println("Enter the employee details");
+//		creating list
+		List<Employee> list=new ArrayList<>();
+		for (int i = 0; i <no; i++) {
+			String details=sc.nextLine();
+			String[] arrayOfDetails =details.split(":");
+			String name=arrayOfDetails[0];
+			String id=arrayOfDetails[1];
+			double salary=Double.parseDouble(arrayOfDetails[2]);
+			Employee e =new Employee(name,id,salary);
+//			input to list of empolyee
+            list.add(e);
+		}
+		System.out.println("Enter the number of times salary limit to be searched");
+		int noofTimes=Integer.parseInt(sc.nextLine());
+		double[] salaryLimit=new double[noofTimes];
+		for (int i = 0; i < noofTimes; i++) {
+			System.out.println("Enter the salary limit to be searched");
+			salaryLimit[i]=Double.parseDouble(sc.nextLine());
+		}
+		for (int i = 0; i < salaryLimit.length; i++) {
+			Management m= new Management(salaryLimit[i], list);
+			m.start();
+			
+		}
+		
+
+		}
+}
+
+

@@ -1,0 +1,7 @@
+
+public class Main {
+public static void main(String[] args) {
+	square s=(int a)->a*a;
+	System.out.println("Area is: "+s.calculate(5));
+}
+}

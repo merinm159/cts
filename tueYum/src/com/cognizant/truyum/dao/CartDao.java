@@ -1,4 +1,5 @@
 package com.cognizant.truyum.dao;
+import com.cognizant.truyum.model.*;
 
 import java.util.List;
 

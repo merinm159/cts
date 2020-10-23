@@ -1,0 +1,38 @@
+package sampleCC2;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		List<Student>studentList=new ArrayList<>();
+		System.out.println("Enter the number of students:");
+		int n=Integer.parseInt(input.nextLine());
+		System.out.println("Enter the Student Deatils");
+		for(int i=0;i<n;i++) {
+			String[] stud=input.nextLine().split(":");
+			Student currstud=new Student(stud[0], stud[1], stud[2]);
+			studentList.add(currstud);
+		}
+		System.out.println("Enter the number of times to be searched:");
+		int num=Integer.parseInt(input.nextLine());
+		String[] category=new String[num];
+		for(int i=0;i<num;i++) {
+			System.out.println("Enter the category to be searched:");
+			category[i]=input.nextLine();
+		}
+		for(int i=0;i<num;i++) {
+			School school=new School(category[i],studentList);
+			//Thread t=new Thread(school);
+			school.start();
+			try {
+				school.join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+}

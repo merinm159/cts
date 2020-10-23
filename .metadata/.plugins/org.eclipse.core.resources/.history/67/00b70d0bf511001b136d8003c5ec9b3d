@@ -1,0 +1,15 @@
+package sampleCC;
+
+import java.util.Scanner;
+
+public class Main2 {
+	Scanner input=new Scanner(System.in);
+	//System.out.println("Enter the number of students: ");
+	int no=Integer.parseInt(input.nextLine());
+	for(i=0;i<no;i++)
+		String[] std=input.nextLine();
+
+		
+	String[] array=input.nextLine().split("[:]");
+
+}

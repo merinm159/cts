@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the account number:");
+		long acctno=Long.parseLong(sc.nextLine());
+		System.out.println("Enter the available amount in the account:");
+		double bal=Double.parseDouble(sc.nextLine());
+		Account a=new Account(acctno,bal);
+		
+		System.out.println("Enter the amount to be deposited:");
+		double dep=Double.parseDouble(sc.nextLine());
+		a.deposit(dep);
+		System.out.println("Available balance is: ");
+		System.out.printf("%.2f",a.getBalanceAmount());
+//		double b=a.getBalanceAmount();
+		
+		System.out.println("Enter the amount to be withdrawn:");
+		double with=Double.parseDouble(sc.nextLine());
+		if(a.withdraw(with)) {
+			System.out.println("Available balance is:");
+			System.out.println("%.2f",a.getBalanceAmount());
+		}
+		else {
+			System.out.println("Insufficient balance");
+		}
+	}
+	
+}

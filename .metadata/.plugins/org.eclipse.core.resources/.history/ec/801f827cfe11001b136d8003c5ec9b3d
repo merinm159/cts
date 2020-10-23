@@ -1,0 +1,32 @@
+package sampleCC2;
+
+public class Student {
+	String studentId;
+	String studentName;
+	String studentCategory;
+	public Student(String studentId, String studentName, String studentCategory) {
+		super();
+		this.studentId = studentId;
+		this.studentName = studentName;
+		this.studentCategory = studentCategory;
+	}
+	public String getStudentId() {
+		return studentId;
+	}
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	public String getStudentCategory() {
+		return studentCategory;
+	}
+	public void setStudentCategory(String studentCategory) {
+		this.studentCategory = studentCategory;
+	}
+	
+}

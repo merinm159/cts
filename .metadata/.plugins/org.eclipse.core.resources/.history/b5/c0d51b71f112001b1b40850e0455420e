@@ -1,0 +1,5 @@
+package exmpl;
+
+public abstract class Payment {
+
+}

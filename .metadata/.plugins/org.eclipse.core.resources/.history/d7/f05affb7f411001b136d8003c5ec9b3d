@@ -1,0 +1,6 @@
+package sampleCC2;
+
+public class Snippet {
+	String[] array=input.nextLine().split("[:]");
+	}
+

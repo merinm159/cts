@@ -1,0 +1,35 @@
+
+public class Account {
+	private long accountNumber;
+	private double balanceAmount;
+	public Account(long accountNumber, double balanceAmount) {
+		super();
+		this.accountNumber = accountNumber;
+		this.balanceAmount = balanceAmount;
+	}
+	public long getAccountNumber() {
+		return accountNumber;
+	}
+	public void setAccountNumber(long accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+	public double getBalanceAmount() {
+		return balanceAmount;
+	}
+	public void setBalanceAmount(double balanceAmount) {
+		this.balanceAmount = balanceAmount;
+	}
+	public boolean withdraw(double withdrawAmt) {
+		if (withdrawAmt<=balanceAmount) {
+			balanceAmount-=withdrawAmt;
+			return true;
+		}
+		return false;
+	}
+	public void deposit(double depositAmt) {
+		balanceAmount+=depositAmt;
+	}
+	
+
+
+}
