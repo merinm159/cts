@@ -1,11 +1,7 @@
 package com.cognizant.truyum.dao;
 
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import com.cognizant.truyum.model.MenuItem;
@@ -42,11 +38,11 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 	}
 
 	@Override
-	public List<MenuItem> getMenuItemListCustomer() throws ParseException {
+	public List<MenuItem> getMenuItemListCustomer() {
 		List<MenuItem> m = new ArrayList<MenuItem>();
 //		Date currentdate = Calendar.getInstance().getTime();  
 //		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
-//        String strDate = dateFormat.format(currentdate); 
+//      String strDate = dateFormat.format(currentdate); 
 //		LocalDate currentdate=LocalDate.now();
 //		Date current=new DateUtil().convertToDate(currentdate);
 		Date strDate = new DateUtil().convertToDate("23/10/2020");

@@ -7,6 +7,9 @@ public class MenuItem {
 	private String name;
 	private float price;
 	private boolean active;
+	private Date dateOfLaunch;
+	private String category;
+	private boolean freeDelivery;
 	public MenuItem(long id, String name, float price, boolean active, Date dateOfLaunch, String category,
 			boolean freeDelivery) {
 		super();
@@ -18,9 +21,6 @@ public class MenuItem {
 		this.category = category;
 		this.freeDelivery = freeDelivery;
 	}
-	private Date dateOfLaunch;
-	private String category;
-	private boolean freeDelivery;
 	public long getId() {
 		return id;
 	}
@@ -63,4 +63,31 @@ public class MenuItem {
 	public void setFreeDelivery(boolean freeDelivery) {
 		this.freeDelivery = freeDelivery;
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MenuItem other = (MenuItem) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "MenuItem [id=" + id + ", name=" + name + ", price=" + price + ", active=" + active + ", dateOfLaunch="
+				+ dateOfLaunch + ", category=" + category + ", freeDelivery=" + freeDelivery + "]";
+	}
+	
 }

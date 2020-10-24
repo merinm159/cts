@@ -40,8 +40,13 @@ public class MenuItemDaoCollectionImplTest {
 		System.out.println(modified);
 	}
 
-	public static void testGetMenuItem() {
+	public static void testGetMenuItem() throws ParseException {
+		MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
+		List<MenuItem> menuItemList = menuItemDao.getMenuItemListCustomer();
 
+		for (MenuItem item : menuItemList) {
+			System.out.println(item);
+		}
 	}
 
 }
