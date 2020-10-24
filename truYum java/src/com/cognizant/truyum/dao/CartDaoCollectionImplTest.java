@@ -13,7 +13,7 @@ public class CartDaoCollectionImplTest {
 
 	public static void testAddCartItem() throws ParseException {
 		CartDao cartDao=new CartDaoCollectionImpl();
-		cartDao.addCartItem(1, 5);
+		cartDao.addCartItem(1, 2);
 		List<MenuItem> cartItemList;
 		try {
 			cartItemList = cartDao.getAllCartItems(1);
@@ -37,7 +37,7 @@ public class CartDaoCollectionImplTest {
 
 	public static void testRemoveCartItem() throws ParseException {
 		CartDao cartDao = new CartDaoCollectionImpl();
-		cartDao.addCartItem(1, 5);
+		cartDao.addCartItem(1, 2);
 		List<MenuItem> lst;
 		try {
 			lst = cartDao.getAllCartItems(1);

@@ -8,15 +8,11 @@ public class CartDaoSqlImplTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Inside CartDaoSqlImplTest's Main");
-		System.out.println("AddCartItem invoked");713612
+		
 		testAddCartItem();
-		System.out.println("getAllCartItem invoked");
 		testGetAllCartItem();
-		System.out.println("removeCartItem invoked");
 		testRemoveCartItem();
 		testGetAllCartItem();
-		System.out.println("Completed..");
 		
 	}
 	
